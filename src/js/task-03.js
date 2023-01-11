@@ -12,3 +12,10 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryEl = document.querySelector('.gallery'); // el ul.gallery
+const addOneInject = el =>
+  `<li class="gallery__item"><img src="${el.url}" alt="${el.alt}" class="gallery__img"></li>`;
+
+const injectString = images.map(addOneInject).join('');
+galleryEl.insertAdjacentHTML('beforeend', injectString);
